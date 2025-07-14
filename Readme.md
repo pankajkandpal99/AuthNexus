@@ -117,26 +117,22 @@ VITE_MY_BACKEND_URL=http:localhost:8800
 
 4. Create a .env file in the server directory based on .env.example:
 
-Server Config -> 
 NODE_ENV=development
 PORT=8800
 JWT_SECRET=your_jwt_secret_key
 
-MySQL Database Config -> 
 DB_USER=your_db_user
 DB_PASSWORD=your_db_password
 DB_NAME=your_db_name
 DB_HOST=localhost
 DB_PORT=3306
 
-App Config -> 
 AUTO_SYNC_DB=true
 COOKIE_DOMAIN=localhost
 ALLOWED_ORIGINS=http://localhost:5173
 BASE_URL=http://localhost:8800
 FRONTEND_URL=http://localhost:5173
 
-SMTP (Email) Config -> 
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_SECURE=false
@@ -145,11 +141,8 @@ SMTP_PASSWORD=your_email_app_password
 SMTP_FROM_EMAIL=your_email@gmail.com
 SMTP_FROM_NAME=AuthNexus
 
-Redis Config -> 
-If using Upstash Redis (cloud) -> 
 UPSTASH_REDIS_URL=redis://default:your_upstash_token@your-upstash-url:port
 
-OR if using local Redis -> 
 REDIS_HOST=localhost
 REDIS_PORT=6379
 REDIS_PASSWORD=
