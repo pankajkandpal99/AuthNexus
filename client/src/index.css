@@ -1,0 +1,208 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.625rem;
+  /* Light theme with warm orange accents */
+  --background: oklch(0.98 0.002 83.678); /* Pure white background */
+  --foreground: oklch(0.15 0.01 45.123); /* Dark charcoal text */
+  --card: oklch(0.975 0.005 89.234); /* Slightly off-white cards */
+  --card-foreground: oklch(0.15 0.01 45.123);
+  --popover: oklch(0.975 0.005 89.234);
+  --popover-foreground: oklch(0.15 0.01 45.123);
+  --primary: #ff6b35; /* Vibrant orange - main accent */
+  --primary-foreground: oklch(0.98 0.002 83.678); /* White text on orange */
+  --secondary: #ffa726; /* Lighter orange for secondary elements */
+  --secondary-foreground: oklch(0.15 0.01 45.123);
+  --muted: oklch(0.95 0.005 89.234); /* Light gray muted areas */
+  --muted-foreground: oklch(0.6 0.01 45.123); /* Medium gray text */
+  --accent: #ff8a50; /* Coral orange for accents */
+  --accent-foreground: oklch(0.98 0.002 83.678);
+  --destructive: oklch(0.704 0.191 22.216); /* Keep red for destructive */
+  --border: oklch(0.9 0.005 89.234); /* Light gray borders */
+  --input: oklch(0.92 0.005 89.234); /* Input field background */
+  --ring: oklch(0.7 0.15 45.678); /* Orange focus rings */
+  --chart-1: #ff6b35; /* Orange */
+  --chart-2: #ffa726; /* Light orange */
+  --chart-3: #ffcc80; /* Pale orange */
+  --chart-4: #ff8a50; /* Coral orange */
+  --chart-5: #ff7043; /* Deep orange */
+  --sidebar: oklch(0.96 0.005 89.234); /* Light sidebar */
+  --sidebar-foreground: oklch(0.15 0.01 45.123);
+  --sidebar-primary: #ff6b35;
+  --sidebar-primary-foreground: oklch(0.98 0.002 83.678);
+  --sidebar-accent: oklch(0.92 0.005 89.234);
+  --sidebar-accent-foreground: oklch(0.15 0.01 45.123);
+  --sidebar-border: oklch(0.9 0.005 89.234);
+  --sidebar-ring: oklch(0.7 0.15 45.678);
+}
+
+.dark {
+  /* Dark theme with complementary orange accents */
+  --background: oklch(0.08 0.01 240.123); /* Very dark blue-gray */
+  --foreground: oklch(0.98 0.002 83.678); /* White text */
+  --card: oklch(0.12 0.01 240.123); /* Dark cards */
+  --card-foreground: oklch(0.98 0.002 83.678);
+  --popover: oklch(0.12 0.01 240.123);
+  --popover-foreground: oklch(0.98 0.002 83.678);
+  --primary: #ff6b35; /* Keep vibrant orange */
+  --primary-foreground: oklch(0.98 0.002 83.678);
+  --secondary: #ffa726; /* Lighter orange */
+  --secondary-foreground: oklch(0.08 0.01 240.123);
+  --muted: oklch(0.16 0.01 240.123); /* Dark muted areas */
+  --muted-foreground: oklch(0.7 0.01 240.123); /* Light gray text */
+  --accent: #ff8a50; /* Coral orange */
+  --accent-foreground: oklch(0.98 0.002 83.678);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(0.2 0.01 240.123); /* Dark borders */
+  --input: oklch(0.18 0.01 240.123); /* Dark input fields */
+  --ring: oklch(0.7 0.15 45.678); /* Orange focus rings */
+  --chart-1: #ff6b35;
+  --chart-2: #ffa726;
+  --chart-3: #ffcc80;
+  --chart-4: #ff8a50;
+  --chart-5: #ff7043;
+  --sidebar: oklch(0.1 0.01 240.123);
+  --sidebar-foreground: oklch(0.98 0.002 83.678);
+  --sidebar-primary: #ff6b35;
+  --sidebar-primary-foreground: oklch(0.98 0.002 83.678);
+  --sidebar-accent: oklch(0.16 0.01 240.123);
+  --sidebar-accent-foreground: oklch(0.98 0.002 83.678);
+  --sidebar-border: oklch(0.2 0.01 240.123);
+  --sidebar-ring: oklch(0.7 0.15 45.678);
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* Custom scrollbar with orange theme */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: oklch(0.92 0.005 89.234);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #ff6b35;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #ff8a50;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-background via-background to-muted text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+  }
+
+  /* Enhanced gradient backgrounds for visual appeal */
+  .bg-hero {
+    background: linear-gradient(
+      135deg,
+      oklch(0.98 0.002 83.678) 0%,
+      oklch(0.975 0.005 89.234) 50%,
+      oklch(0.96 0.01 89.234) 100%
+    );
+  }
+
+  .bg-card-gradient {
+    background: linear-gradient(
+      145deg,
+      oklch(0.98 0.002 83.678) 0%,
+      oklch(0.975 0.005 89.234) 100%
+    );
+  }
+
+  /* Orange accent gradients */
+  .bg-primary-gradient {
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8a50 100%);
+  }
+
+  .bg-secondary-gradient {
+    background: linear-gradient(135deg, #ffa726 0%, #ffcc80 100%);
+  }
+
+  /* Subtle shadows for depth */
+  .shadow-soft {
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.08);
+  }
+
+  .shadow-orange {
+    box-shadow: 0 4px 16px rgba(255, 107, 53, 0.15);
+  }
+
+  /* Hover effects */
+  .hover-lift {
+    transition: all 0.2s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.15);
+  }
+}
